@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shohan Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #1a1a1a;
+      color: #f0f0f0;
+    }
+    header {
+      background: #2b2d42;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .site-name a {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    #toggle-theme, #menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #edf2f4;
+    }
+    body.dark .hero {
+      background: #2b2d42;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #2b2d42;
+    }
+    #about, #works, #reachout {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #2b2d42;
+      padding-bottom: 0.3rem;
+    }
+    ul {
+      margin-left: 1.5rem;
+    }
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    body.dark .card {
+      background: #333;
+      color: #f0f0f0;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #ef233c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 1.5rem;
+    }
+    form input, form textarea {
+      padding: 0.8rem;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background: #2b2d42;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .msg-status {
+      color: #ef233c;
+      font-weight: bold;
+    }
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #ef233c;
+    }
+    footer {
+      text-align: center;
+      background: #2b2d42;
+      color: white;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 700px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #2b2d42;
+        padding: 1rem;
+      }
+      nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-name"><a href="#">Shohan's World</a></div>
+    <nav>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#reachout">Reach Out</a></li>
+      </ul>
+    </nav>
+    <button id="toggle-theme">🌙</button>
+    <button id="menu-btn">☰</button>
+  </header>
+
+  <section id="intro" class="hero">
+    <img src="profile.jpg" alt="Shohan Profile" class="profile-img">
+    <h1>Hi, I'm Shohan</h1>
+    <p>Web Developer | Problem Solver | Tech Explorer</p>
+  </section>
+
+  <section id="about">
+    <h2>Who Am I?</h2>
+    <p>Computer Science student at Daffodil International University, Dhaka. I love building things for the web.</p>
+    <ul>
+      <li>🔧 Frontend: HTML, CSS, JS</li>
+      <li>📱 Flutter Enthusiast</li>
+      <li>🧠 Learning ML</li>
+      <li>🚀 Fast Learner & Debug Ninja</li>
+    </ul>
+  </section>
+
+  <section id="works">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>Biodata Builder</h3>
+        <p>Collects details in an organized form. Simple, clean and customizable.</p>
+        <a href="https://frabjous-marzipan-d5443a.netlify.app" target="_blank">Check It</a>
+      </div>
+      <div class="card">
+        <h3>JS Calculator</h3>
+        <p>Responsive calculator with basic operations built in vanilla JavaScript.</p>
+        <a href="https://peaceful-yeot-9b5de8.netlify.app" target="_blank">Try It</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reachout">
+    <h2>Contact</h2>
+    <form id="message-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Say Hello..." required></textarea>
+      <button type="submit">Send</button>
+      <p class="msg-status"></p>
+    </form>
+
+    <div class="links">
+      <a href="mailto:sayhamshohan.007@gmail.com">Email</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://github.com/tokisayhamshohan" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sayham Shohan | Built with heart in Dhaka</p>
+  </footer>
+
+  <script>
+    document.getElementById('toggle-theme').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const icon = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      document.getElementById('toggle-theme').textContent = icon;
+    });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const navList = document.querySelector('nav ul');
+    menuBtn.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+
+    document.getElementById('message-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = document.querySelector('.msg-status');
+      msg.textContent = 'Sending...';
+      setTimeout(() => {
+        msg.textContent = 'Thank you! Your message has been sent.';
+        this.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
